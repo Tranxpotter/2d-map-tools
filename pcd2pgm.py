@@ -66,6 +66,12 @@ def main(args):
         py = height - 1 - py
         map_img[py, px] = 0  # Black
 
+    #Create output folder if not exist
+    dirname = os.path.dirname(map_output_name)
+    if dirname and not os.path.exists(dirname):
+        print(f"Creating directory {dirname}")
+        os.makedirs(dirname)
+
     # 5. Save PGM
     cv2.imwrite(f"{map_output_name}.pgm", map_img)
     print(f"Saved {map_output_name}.pgm")
