@@ -78,12 +78,12 @@ def main(args):
 
     # 6. Save YAML
     yaml_content = f"""image: {map_output_name}.pgm
-    resolution: {resolution}
-    origin: [{min_x}, {min_y}, 0.0]
-    negate: 0
-    occupied_thresh: 0.65
-    free_thresh: 0.196
-    """
+resolution: {resolution}
+origin: [{min_x}, {min_y}, 0.0]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+"""
     with open(f"{map_output_name}.yaml", "w") as f:
         f.write(yaml_content)
     print(f"Saved {map_output_name}.yaml")
